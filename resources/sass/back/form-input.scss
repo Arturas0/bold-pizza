@@ -1,0 +1,103 @@
+    .custom-field {
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        font-size: 1rem;
+        border-top: 1.25rem solid transparent;
+        margin-bottom: 0.25rem;
+        --field-padding: 0.75rem;
+        width: 100%;
+
+        input {
+            border: none;
+            appearance: none;
+            background: #f2f2f2;
+            padding: var(--field-padding);
+            width: 100%;
+            border-radius: 3px;
+            
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .placeholder {
+            position: absolute;
+            left: var(--field-padding);
+            width: calc(100% - (var(--field-padding) * 2));
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            top: 2rem;
+            line-height: 100%;
+            transform: translateY(-50%);
+            color: #aaa;
+            transition:
+                top 0.3s ease,
+                color 0.3s ease,
+                font-size 0.3s ease;
+        }
+
+        &.one {
+
+            input {
+                background: none;
+                border: 2px solid #ddd;
+                transition: border-color 0.3s ease;
+
+                +.placeholder {
+                    left: 8px;
+                    padding: 0 5px;
+                }
+            }
+
+            input:not(:placeholder-shown),
+            input:focus {
+                border-color: #222;
+                transition-delay: 0.1s;
+
+                +.placeholder {
+                    top: 0.5rem;
+                    font-size: 0.8rem;
+                    color: $darkBlack;
+                    background: $white;
+                    width: auto
+                }
+            }
+        }
+
+    }
+
+
+
+
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+@include media(">tablet", "<=desktop") {
+
+            .custom-field {
+
+            input {
+                width: 300%;
+                color: blue;
+            }
+        }
+    }
+
+
+@include media(">phone", "<tablet") {
+
+    
+        .custom-field {
+
+            input {
+                width: 400%;
+                color: red;
+
+            }
+        }
+    }
+

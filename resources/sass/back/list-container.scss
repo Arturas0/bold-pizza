@@ -1,0 +1,188 @@
+.list-container {
+    min-width: 320px;
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .list-card {
+        width: 100%;
+
+        &__header {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: $gray;
+            border-bottom: 1px solid #333;
+            border-radius: 5px 5px 0 0;
+            padding: 0.75rem;
+        }
+
+        &__body {
+            background-color: $white;
+            border-radius: 0 0 5px 5px;
+
+            :first-child {
+                padding-top: 0.5rem;
+            }
+
+            &__flex {
+                display: flex;
+                flex-flow: row wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                font-size: 1.2em;
+                padding: 0 1rem;
+
+                &__title {
+                    width: 60%;
+                }
+
+                &__title7 {
+                    width: 70%;
+                }
+
+                &__title3 {
+                    width: 30%;
+                }
+
+                &__title2 {
+                    width: 20%;
+                }
+
+                &__title1 {
+                    width: 10%;
+                }
+
+                &__full-title {
+                    width: 100%;
+
+                }
+
+                &__photo {
+                    width: 100%;
+
+                    img {
+                        width: 25%;
+                    }
+                }
+
+                &__element {
+                    display: flex;
+                    flex-flow: row wrap;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+
+    &__content {
+        color: rgb(43, 43, 126);
+        font-size: 1.5em;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+//summernote lango dydis
+.note-editable {
+    min-height: 100px;
+}
+
+
+.list-card__body__flex:first-child .list-card__body__flex__element .index-list__buttons:first-of-type form:first-of-type button {
+    display:none;
+}
+
+
+.list-card__body__flex:last-of-type .list-card__body__flex__element .index-list__buttons:last-of-type form:last-of-type button {
+    display:none;
+}
+
+svg {
+    height: 40px;
+    width: 40px;
+    fill: $blue;
+
+    &.rotate {
+        transform: rotate(180deg);
+    }
+}
+
+button {
+    border: 1px solid transparent;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+    &:hover {
+        border: 1px solid $lightBlack;
+    }
+}
+
+.custom-btn {
+    display: inline-block;
+    color: $white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+    &:hover {
+        background-color: $blue-dark;
+    }
+}
+
+.custom-btn-light-black {
+    background-color: $green-dark;
+}
+
+.custom-btn-deepRed {
+    background-color: $red-light;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $white;
+}
+
+a {
+    margin-right: 5px;
+}
+
+
+hr {
+    margin: 0.5rem 0;
+}
+
+
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+/* Inclusive and exclusive operators for a finer control over the intervals */
+@include media(">phone", "<=tablet") {
+
+    .list-container {
+
+        .list-card {
+
+            &__header>h1 {
+                font-size: 1.75rem;
+            }
+        }
+    }
+}

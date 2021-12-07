@@ -1,0 +1,17 @@
+.bg-blue {
+    background-color: $blue-light;
+}
+
+#app {
+    
+    nav {
+        background-color: $blue-dark;
+        & a.navbar-brand {
+            color:$white;
+        }
+    }
+main {
+    height: 100%;
+}
+
+}
