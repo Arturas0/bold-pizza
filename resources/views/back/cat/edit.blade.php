@@ -15,7 +15,7 @@
                             <span class="placeholder">Enter category name</span>
                         </label>
                     </div>
-                    <button type="submit" class="custom-btn custom-btn-light-black my-3">Save
+                    <button type="submit" class="custom-btn custom-btn-dark-blue my-3">Save
                     </button>
                 </div>
         </div>

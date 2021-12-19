@@ -40,7 +40,6 @@
                 color 0.3s ease,
                 font-size 0.3s ease;
         }
-
         &.one {
 
             input {
@@ -72,8 +71,6 @@
     }
 
 
-
-
 $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 @include media(">tablet", "<=desktop") {
@@ -89,15 +86,10 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 
 @include media(">phone", "<tablet") {
-
-    
         .custom-field {
-
             input {
                 width: 400%;
                 color: red;
-
             }
         }
     }
-

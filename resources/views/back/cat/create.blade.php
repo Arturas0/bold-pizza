@@ -15,7 +15,7 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="custom-btn custom-btn-light-black my-3">New
+                    <button type="submit" class="custom-btn custom-btn-dark-blue my-3">New
                         category</button>
                 </div>
         </div>

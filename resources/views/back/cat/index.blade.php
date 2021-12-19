@@ -13,7 +13,7 @@
                 </div>
                 <div class="list-card__body__flex__element">
                     <div>
-                        <a class="custom-btn custom-btn-light-black" href="{{route('cat_edit', [$cat])}}">Edit</a>
+                        <a class="custom-btn custom-btn-dark-blue" href="{{route('cat_edit', [$cat])}}">Edit</a>
                     </div>
                     <div>
                         <form action="{{route('cat_delete', $cat)}}" method="POST">

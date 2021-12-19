@@ -26,10 +26,6 @@
             background-color: $white;
             border-radius: 0 0 5px 5px;
 
-            :first-child {
-                padding-top: 0.5rem;
-            }
-
             &__flex {
                 display: flex;
                 flex-flow: row wrap;
@@ -39,6 +35,32 @@
                 flex-wrap: wrap;
                 font-size: 1.2em;
                 padding: 0 1rem;
+
+                &:first-child .list-card__body__flex__element {
+                    &:last-child {
+                        padding-top: 0.5rem;
+                    }
+
+                    &__arrows:first-child:first-of-type {
+                        & form:first-of-type button {
+                            display: none;
+                        }
+
+                        & form:last-of-type button {
+                            padding-top: 0.5rem;
+                        }
+                    }
+                }
+
+                &:last-of-type .list-card__body__flex__element {
+                    &__arrows form:last-of-type button {
+                        display: none;
+                    }
+                }
+
+                &:not(:first-child):not(:last-of-type) .list-card__body__flex__element__arrows form:first-child {
+                    padding-bottom: 0.5rem;
+                }
 
                 &__title {
                     width: 60%;
@@ -81,6 +103,10 @@
                     align-items: center;
                     flex-wrap: wrap;
                     margin-right: 1rem;
+
+                    &__arrows {
+                        padding-right: 0.5rem;
+                    }
                 }
             }
         }
@@ -105,19 +131,11 @@
 }
 
 
-.list-card__body__flex:first-child .list-card__body__flex__element .index-list__buttons:first-of-type form:first-of-type button {
-    display:none;
-}
-
-
-.list-card__body__flex:last-of-type .list-card__body__flex__element .index-list__buttons:last-of-type form:last-of-type button {
-    display:none;
-}
-
 svg {
-    height: 40px;
-    width: 40px;
-    fill: $blue;
+    height: 30px;
+    width: 30px;
+    fill: $white;
+
 
     &.rotate {
         transform: rotate(180deg);
@@ -125,12 +143,14 @@ svg {
 }
 
 button {
+    background-color: $blue-dark;
     border: 1px solid transparent;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 0.9rem;
 
     &:hover {
+        background-color: $blue-light;
         border: 1px solid $lightBlack;
     }
 }
@@ -144,9 +164,14 @@ button {
     font-size: 0.9rem;
 
     &:hover {
-        background-color: $blue-dark;
+        background-color: $blue-light;
     }
 }
+
+.custom-btn-dark-blue {
+    background-color: $blue-dark;
+}
+
 
 .custom-btn-light-black {
     background-color: $green-dark;
@@ -175,11 +200,8 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 /* Inclusive and exclusive operators for a finer control over the intervals */
 @include media(">phone", "<=tablet") {
-
     .list-container {
-
         .list-card {
-
             &__header>h1 {
                 font-size: 1.75rem;
             }
